@@ -4,7 +4,39 @@ console.log("main.js!!");
 $(document).ready(()=>{
 	console.log("Ready!!");
 
-	for(let r=1; r<21; r++){
+	//テーブルを取得する
+	$("#training").append("<tr><td>3</td><td>6</td><td>9</td><td>12</td></tr>"); //3の段
+	$("#training").append("<tr><td>4</td><td>8</td><td>12</td><td>16</td></tr>"); //4の段
+
+	//for文を思い出してみる(1 ~ 9まで)
+	for(let r=1; r<10; r++){
+		console.log("rは",r);
+		for(let c=1; c<10; c++){
+			console.log("cは",c);
+			console.log("掛け算",r*c);
+		}
+	}
+
+	//とりあえず段だけやってみる
+	/*for(let r=1; r<10; r++){
+		$("#training").append("<tr><td>*</td><td>*</td><td>*</td><td>*</td></tr>");
+	}*/
+
+	//エレメントを作る
+	for(let r=1; r<10; r++){
+		let elem = $("<tr></tr>");//trエレメントを作る
+		elem.append("<td>1</td>"); //エレメントに追加
+		elem.append("<td>2</td>"); //エレメントに追加
+		elem.append("<td>3</td>"); //エレメントに追加
+		console.log(elem);
+		$("#training").append(elem);//テーブルに追加
+	}
+
+
+
+	//TODO; 上の技術を駆使して九九表を作りなさい
+
+	for(let r=1; r<10; r++){
 		let elem = $("<tr></tr>");//trエレメントを作る
 		elem.append("<td>" + (r * 1) + "</td>"); //エレメントに追加
 		elem.append("<td>" + (r * 2) + "</td>"); //エレメントに追加
@@ -15,17 +47,6 @@ $(document).ready(()=>{
 		elem.append("<td>" + (r * 7) + "</td>");
 		elem.append("<td>" + (r * 8) + "</td>");
 		elem.append("<td>" + (r * 9) + "</td>");
-		elem.append("<td>" + (r * 10) + "</td>");
-		elem.append("<td>" + (r * 11) + "</td>");
-		elem.append("<td>" + (r * 12) + "</td>");
-		elem.append("<td>" + (r * 13) + "</td>");
-		elem.append("<td>" + (r * 14) + "</td>");
-		elem.append("<td>" + (r * 15) + "</td>");
-		elem.append("<td>" + (r * 16) + "</td>");
-		elem.append("<td>" + (r * 17) + "</td>");
-		elem.append("<td>" + (r * 18) + "</td>");
-		elem.append("<td>" + (r * 19) + "</td>");
-		elem.append("<td>" + (r * 20) + "</td>");
 		//elem.append("<td>3</td>"); //エレメントに追加
 		console.log(elem);
 		$("#target").append(elem);//テーブルに追加
