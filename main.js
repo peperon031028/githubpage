@@ -3,65 +3,67 @@ console.log("main.js!!");
 // Ready
 $(document).ready(()=>{
 	console.log("Ready!!");
+	// Axiosを使ってみる!!
+	const option = {responseType: "blob"};
+	axios.get("https://www.jma.go.jp/bosai/forecast/data/forecast/130000.json", option).then(res=>{
+		// 通信が成功した場合
+		console.log("通信成功!!");
+		console.log(res);// データそのもの
+		res.data.text().then(str=>{
+			let arr = JSON.parse(str);// JSONオブジェクトに変換
+			console.log(arr);// データ確認
+			console.log(arr[0] ["publishingOffice"]) ;　// 気象庁
+			console.log(arr[0] ["reportDatetime"]) ;　// 発令された日時
+			console.log(arr[0] ["timeSeries"] [0]) ;　// ０番目のデータ
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [0] ["area"] ["name"]) ;　// 東京地方
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [0] ["waves"] ["0"]) ;　// 0.5メートル
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [0] ["weathers"] ["0"]) ;　// 晴れ　時々　曇り
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [0] ["winds"] ["0"]) ;　// 南西の風
+			
+			// 伊豆諸島北部
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [1] ["area"] ["name"]) ;　
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [1] ["waves"] ["0"]) ;　
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [1] ["weathers"] ["0"]) ;　
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [1] ["winds"] ["0"]) ;　
 
-	//テーブルを取得する
-	$("#training").append("<tr><td>3</td><td>6</td><td>9</td><td>12</td></tr>"); //3の段
-	$("#training").append("<tr><td>4</td><td>8</td><td>12</td><td>16</td></tr>"); //4の段
+			// 伊豆諸島南部
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [2] ["area"] ["name"]) ;　
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [2] ["waves"] ["0"]) ;　
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [2] ["weathers"] ["0"]) ;　
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [2] ["winds"] ["0"]) ;　
 
-	//for文を思い出してみる(1 ~ 9まで)
-	for(let r=1; r<10; r++){
-		console.log("rは",r);
-		for(let c=1; c<10; c++){
-			console.log("cは",c);
-			console.log("掛け算",r*c);
-		}
-	}
+			// 小笠原諸島
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [3] ["area"] ["name"]) ;　
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [3] ["waves"] ["0"]) ;　
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [3] ["weathers"] ["0"]) ;　
+			console.log(arr[0] ["timeSeries"] [0] ["areas"] [3] ["winds"] ["0"]) ;　
 
-	//とりあえず段だけやってみる
-	/*for(let r=1; r<10; r++){
-		$("#training").append("<tr><td>*</td><td>*</td><td>*</td><td>*</td></tr>");
-	}*/
+			//東京地方の今日の天気をhtmlでjQueryを使って表示する
 
-	//エレメントを作る
-	for(let r=1; r<10; r++){
-		let elem = $("<tr></tr>");//trエレメントを作る
-		elem.append("<td>1</td>"); //エレメントに追加
-		elem.append("<td>2</td>"); //エレメントに追加
-		elem.append("<td>3</td>"); //エレメントに追加
-		console.log(elem);
-		$("#training").append(elem);//テーブルに追加
-	}
+			//タグの中身を書き換える
+			$("#tenki1").click (() => {
+				$("#my_id").text("書き換えてあります");
+			$("#my_id3").text("雨");
+			$("#my_id4").text("のち曇り");
+			});
+			
 
-
-
-	//TODO; 上の技術を駆使して九九表を作りなさい
-
-	for(let r=1; r<10; r++){
-		let elem = $("<tr></tr>");//trエレメントを作る
-		elem.append("<td>" + (r * 1) + "</td>"); //エレメントに追加
-		elem.append("<td>" + (r * 2) + "</td>"); //エレメントに追加
-		elem.append("<td>" + (r * 3) + "</td>");
-		elem.append("<td>" + (r * 4) + "</td>");
-		elem.append("<td>" + (r * 5) + "</td>");
-		elem.append("<td>" + (r * 6) + "</td>");
-		elem.append("<td>" + (r * 7) + "</td>");
-		elem.append("<td>" + (r * 8) + "</td>");
-		elem.append("<td>" + (r * 9) + "</td>");
-		//elem.append("<td>3</td>"); //エレメントに追加
-		console.log(elem);
-		$("#target").append(elem);//テーブルに追加
-	}
-
-	let num = 2;
-	let tag = "<P>" + (num * 3) + "</p>";
-	console.log(tag);
+			$("#tenki2").click (() => {
+				console.log("東京１１月１０日")
+				console.log("晴れ")
+				console.log("16℃")
+				console.log("降水確率：１０％")
+				console.log("湿度６０％")
+				console.log("風速:0m/s")
+			});
 
 
-
-
-	//文字連結を使う
-	/*let num = 81;
-	let tag = "<p>" + num + "</p>";
-	console.log(tag);*/
-
+			//東京地方の今日の天気のアイコンをjQueryを使って表示する
+			
+		});
+	}).catch(err=>{
+		// 通信が失敗した場合
+		console.log("通信失敗...");
+		console.log(err);// エラー内容
+	});
 });
