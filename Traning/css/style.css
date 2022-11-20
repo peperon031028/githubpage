@@ -1,0 +1,121 @@
+@charset "utf-8";
+
+body{
+    font-size: 16px;
+    color: #666;
+    font-family: sans-serif;
+}
+#container{
+    width: 834px;
+    display:grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 356px auto 65px 120px;
+    row-gap: 30px;
+    margin: 0 auto;
+}
+header{
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+header h1{
+    font-size: 30px;
+    margin-left: 20px;
+}
+header{
+    display: flex;
+}
+header ul{
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    margin-left: 20px;
+    margin-top: 25px;
+    list-style: none;
+}
+header ul a:link{
+    font-size: 14px;
+    color: #666;
+    text-decoration: none;
+}
+header ul a:hover{
+    color: blue;
+}
+.mainphoto{
+    grid-column: 1;
+    grid-row: 2;
+}
+main{
+    grid-column: 1;
+    grid-row: 3;
+    display: grid;
+    grid-template-columns: 40px 1fr 40px 1fr 40px;
+    grid-template-rows: 24px 412px;
+}
+main h2{
+    grid-column: 2;
+    grid-row: 1;
+    margin-bottom: 30px;
+}
+.photo{
+    grid-column: 2;
+    grid-row: 2;
+}
+.majiros{
+    display: flex;
+    justify-content: space-between;
+}
+.majiros img{
+    width: 117px;
+    height: 117px;
+}
+.main_text{
+    grid-column: 4;
+    grid-row: 2;
+    line-height: 1.5em;
+}
+.main_text .p1{
+    padding: 10px;
+    border: 1px solid silver;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+.main_text .back{
+    border: 1px solid silver;
+    border-radius: 20px;
+    text-align: right;
+    width: 40px;
+    padding: 10px 20px 10px 20px;
+    margin: 0 0 0 auto;
+}
+.sns{
+    grid-column: 1;
+    grid-row: 4;
+    width: 300px;
+    margin: 0 auto;
+}
+.sns .sns_logo{
+    display: flex;
+    justify-content: space-between;
+}
+footer{
+    padding: 15px 40px;
+    background-color: #777;
+}
+footer h3{
+    color: #fff;
+}
+footer .text_box{
+    width: 680px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+footer .text_box .footer_text{
+    color: #000;
+    font-size: 14px;
+    line-height: 2em;
+}
+
