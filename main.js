@@ -1,69 +1,69 @@
 console.log("main.js!!");
 
+let counter = 1; //カウンター
+let interId = -1 //インターバルID
+
 // Ready
 $(document).ready(()=>{
 	console.log("Ready!!");
-	// Axiosを使ってみる!!
-	const option = {responseType: "blob"};
-	axios.get("https://www.jma.go.jp/bosai/forecast/data/forecast/130000.json", option).then(res=>{
-		// 通信が成功した場合
-		console.log("通信成功!!");
-		console.log(res);// データそのもの
-		res.data.text().then(str=>{
-			let arr = JSON.parse(str);// JSONオブジェクトに変換
-			console.log(arr);// データ確認
-			console.log(arr[0] ["publishingOffice"]) ;　// 気象庁
-			console.log(arr[0] ["reportDatetime"]) ;　// 発令された日時
-			console.log(arr[0] ["timeSeries"] [0]) ;　// ０番目のデータ
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [0] ["area"] ["name"]) ;　// 東京地方
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [0] ["waves"] ["0"]) ;　// 0.5メートル
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [0] ["weathers"] ["0"]) ;　// 晴れ　時々　曇り
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [0] ["winds"] ["0"]) ;　// 南西の風
-			
-			// 伊豆諸島北部
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [1] ["area"] ["name"]) ;　
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [1] ["waves"] ["0"]) ;　
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [1] ["weathers"] ["0"]) ;　
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [1] ["winds"] ["0"]) ;　
 
-			// 伊豆諸島南部
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [2] ["area"] ["name"]) ;　
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [2] ["waves"] ["0"]) ;　
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [2] ["weathers"] ["0"]) ;　
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [2] ["winds"] ["0"]) ;　
+	$("#my_counter").text(counter);
+	//--------------------------------	
 
-			// 小笠原諸島
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [3] ["area"] ["name"]) ;　
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [3] ["waves"] ["0"]) ;　
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [3] ["weathers"] ["0"]) ;　
-			console.log(arr[0] ["timeSeries"] [0] ["areas"] [3] ["winds"] ["0"]) ;　
+	//TODO2 ボタン　"Start" -> "stop" -> "start"
+	$("#my_btn2").click(()=>{
+		clearInterval(interId);
+	})
 
-			//東京地方の今日の天気をhtmlでjQueryを使って表示する
+	//---------------------------
 
-			//タグの中身を書き換える
-			$("#tenki1").click (() => {
-				$("#my_id").text("書き換えてあります");
-			$("#my_id3").text("雨");
-			$("#my_id4").text("のち曇り");
-			});
-			
+	//TODO3 初期化する
+	$("#my_btn3").click(()=>{
+		clearInterval(interId);
 
-			$("#tenki2").click (() => {
-				console.log("東京１１月１０日")
-				console.log("晴れ")
-				console.log("16℃")
-				console.log("降水確率：１０％")
-				console.log("湿度６０％")
-				console.log("風速:0m/s")
-			});
+　　　　　counter = 1;
+
+		$("#my_counter").text(counter);
 
 
-			//東京地方の今日の天気のアイコンをjQueryを使って表示する
-			
-		});
-	}).catch(err=>{
-		// 通信が失敗した場合
-		console.log("通信失敗...");
-		console.log(err);// エラー内容
-	});
+		 //counter = 1;
+	})
+
+	//----------------------------------
+//１足す
+$("#my_btn1").click(()=>{
+
+	interId = setInterval(() => {
+		//console.log("実行中です")
+		counter += 1; //カウンターに+1
+		//console.log(counter);
+		$("#my_counter").text(counter);
+	}, 100);
+	
+})
+
+	//2倍にする
+	$("#my_btn4").click(()=>{
+
+		interId = setInterval(() => {
+			//console.log("実行中です")
+			counter *= 2; //カウンターに+1
+			//console.log(counter);
+			$("#my_counter").text(counter);
+		}, 100);
+		
+	})
+
+   //2で割る
+	$("#my_btn5").click(()=>{
+
+		interId = setInterval(() => {
+			//console.log("実行中です")
+			counter *= 5; 
+			//console.log(counter);
+			$("#my_counter").text(counter);
+		}, 100);
+		
+	})
+
 });

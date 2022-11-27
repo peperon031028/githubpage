@@ -5,8 +5,16 @@ html, body{
 	margin: 0px; padding: 0px;
 }
 
-#mapid{
-	margin: 0px; padding: 0px;
-	width: 480px; height: 320px;
-	background-color: gray;
+#my_container{
+	width: 100%; height: 100%;
+	display: flex; flex-flow: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+#my_container div{
+	margin: 0px; padding: 10px 30px;
+	border-radius: 20px;
+	background-color: gray; color: white;
+	font-size: 2rem; text-align: center;
 }
