@@ -1,69 +1,118 @@
 console.log("main.js!!");
 
-let counter = 1; //カウンター
-let interId = -1 //インターバルID
+let snd1 = null //サウンド１
+let snd2 = null //サウンド２
+let snd3 = null //サウンド３
+let snd4 = null //サウンド４
+let snd5 = null //サウンド５
+let snd6 = null //サウンド６
+let snd7 = null //サウンド７
+let snd8 = null //サウンド８
+let snd9 = null //サウンド９
+
 
 // Ready
 $(document).ready(()=>{
 	console.log("Ready!!");
 
-	$("#my_counter").text(counter);
-	//--------------------------------	
+	//サウンド１オブジェクトを作る
+	snd1 = new Howl({
+		src:["./sounds/taiko1.mp3"],
+		loop: false,
+		volume: 1.0
+	});
+	console.log(snd1)
 
-	//TODO2 ボタン　"Start" -> "stop" -> "start"
-	$("#my_btn2").click(()=>{
-		clearInterval(interId);
+	snd2 = new Howl({
+		src:["./sounds/taiko2.mp3"],
+		loop: false,
+		volume: 1.0
+	});
+	console.log(snd2)
+
+	snd3 = new Howl({
+		src:["./sounds/taiko3.mp3"],
+		loop: false,
+		volume: 1.0
+	});
+	console.log(snd3)
+
+	snd4 = new Howl({
+		src:["./sounds/don.mp3"],
+		loop: false,
+		volume: 1.0
+	});
+	console.log(snd4)
+
+	snd5 = new Howl({
+		src:["./sounds/doramu.mp3"],
+		loop: false,
+		volume: 1.0
+	});
+	console.log(snd5)
+
+	snd6 = new Howl({
+		src:["./sounds/roru.mp3"],
+		loop: false,
+		volume: 1.0
+	});
+	console.log(snd6)
+
+	snd7 = new Howl({
+		src:["./sounds/piano.mp3"],
+		loop: false,
+		volume: 1.0
+	});
+	console.log(snd7)
+
+	snd8 = new Howl({
+		src:["./sounds/suzu.mp3"],
+		loop: false,
+		volume: 1.0
+	});
+	console.log(snd8)
+
+	snd9 = new Howl({
+		src:["./sounds/tyan.mp3"],
+		loop: false,
+		volume: 1.0
+	});
+	console.log(snd9)
+
+	$("#snd1").click(() => {
+		snd1.play()
 	})
 
-	//---------------------------
-
-	//TODO3 初期化する
-	$("#my_btn3").click(()=>{
-		clearInterval(interId);
-
-　　　　　counter = 1;
-
-		$("#my_counter").text(counter);
-
-
-		 //counter = 1;
+	$("#snd2").click(() => {
+		snd2.play()
 	})
-
-	//----------------------------------
-//１足す
-$("#my_btn1").click(()=>{
-
-	interId = setInterval(() => {
-		//console.log("実行中です")
-		counter += 1; //カウンターに+1
-		//console.log(counter);
-		$("#my_counter").text(counter);
-	}, 100);
 	
-})
-
-	//2倍にする
-	$("#my_btn4").click(()=>{
-
-		interId = setInterval(() => {
-			//console.log("実行中です")
-			counter *= 2; //カウンターに+1
-			//console.log(counter);
-			$("#my_counter").text(counter);
-		}, 100);
-		
+	$("#snd3").click(() => {
+		snd3.play()
 	})
 
-   //2で割る
-	$("#my_btn5").click(()=>{
+	$("#snd4").click(() => {
+		snd4.play()
+	})
 
-		interId = setInterval(() => {
-			//console.log("実行中です")
-			counter *= 5; 
-			//console.log(counter);
-			$("#my_counter").text(counter);
-		}, 100);
-		
+	$("#snd5").click(() => {
+		snd5.play()
+	})
+
+	$("#snd6").click(() => {
+		snd6.play()
+	})
+
+	$("#snd7").click(() => {
+		snd7.play()
+	})
+
+	$("#snd8").click(() => {
+		snd8.play()
+	})
+
+	$("#snd9").click(() => {
+		snd9.play()
 	})
 
 });

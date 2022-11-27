@@ -3,18 +3,18 @@
 html, body{
 	width: 100%; height: 100%;
 	margin: 0px; padding: 0px;
+	background-color: floralwhite;
 }
 
-#my_container{
-	width: 100%; height: 100%;
-	display: flex; flex-flow: wrap;
-	justify-content: space-around;
-	align-items: center;
+#container {
+	margin: 0px; padding: 1rem;
+	background-color: antiquewhite;
 }
+button{
+	background-color: blue;
+	color: white;
+	width: 80px;
+	height: 80px;
 
-#my_container div{
-	margin: 0px; padding: 10px 30px;
-	border-radius: 20px;
-	background-color: gray; color: white;
-	font-size: 2rem; text-align: center;
+	box-shadow: 10px 10px #bbb;
 }
