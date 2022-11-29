@@ -4,22 +4,34 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>Leaflet</title>
+	<title>Axios</title>
 	<!-- CSS -->
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
 	<link rel="stylesheet" href="./css/custom.css">
 </head>
 <body>
-	<h1>Leaflet</h1>
+	<div id="container">
+	<h2>今日の天気は</h2>
 
-	<div id="mapid"></div>
+		<h1 id="tenki"></h1>
+		<p id="p1"></p>
+		<p id="p2"></p>
 
+	<div id="aikon">
+	</div>
+
+	<div id="container2">
+		<h2>明日の天気は</h2>
+	
+			<h1 id="tenki2"></h1>
+			<p id="p3"></p>
+			<p id="p4"></p>
+	
+		<div id="aikon2">
+		</div>
+</div>
 	<!-- JavaScript -->
 	<script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
-	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-	crossorigin=""></script>
+	<script src="//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 	<script src="./main.js"></script>
 </body>
 </html>
