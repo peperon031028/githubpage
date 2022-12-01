@@ -1,0 +1,7 @@
+/* 時計の共通スタイル */
+.clock {
+    font-family: 'Share Tech Mono', monospace;
+    color: blue;
+    line-height: 1.2;
+    text-align: center;
+  }
