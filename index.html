@@ -7,26 +7,34 @@
 	<title>Research</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="./css/custom.css">
+	<link rel="stylesheet" href="./css/custom.css">
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
 </head>
 <body>
+	<h1>割り勘くん</h1>
+	<h2>金額と人数を入力してください</h2>
 
-	<div id="app">
-		<dl>
-			<dt>緯度</dt>
-			<dd id="lat">ここに緯度を表示</dd>
-		</dl>
-		<dl>
-			<dt>経度</dt>
-			<dd id="lng">ここに経度を表示</dd>
-		</dl>
-		<dl>
-			<!-- 時間(ミリ秒) -->
-			<dt>時間（ミリ秒）</dt>
-			<dd id="Time">ここに時間を表示</dd>
-		</dl>
-	
-		<a id="map" href="" target="_blank">Google Map</a>
+	<div class="container">
+		<div class="input-area">
+			<input type="text" id="price" placeholder="金額">
+			<input type="text" id="num" placeholder="人数">
+			<select id="unit">
+				<option value="0">選択してください</option>
+				<option value="1">1円単位</option>
+				<option value="10">10円単位</option>
+				<option value="100">100円単位</option>
+				<option value="1000">1000円単位</option>
+			</select>
+			<button id="btn">計算</button>
+			</div>
+			<div id="result-area">
+				<p id="result">ここに結果を表示します</p>
+				<p ></p>
+			</div>
+		</div>
 	</div>
+
 	
 	<!-- JavaScript -->
 	<script src="//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
