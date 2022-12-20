@@ -4,40 +4,43 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>Research</title>
+	<title>Kitchen</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="./css/custom.css">
-	<link rel="stylesheet" href="./css/custom.css">
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
 </head>
 <body>
-	<h1>割り勘くん</h1>
-	<h2>金額と人数を入力してください</h2>
+	<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="initial-scale=1.0" />
+    <title>スマホバイブ</title>
+    <script>
+      window.addEventListener("load", function(){
+        document.getElementById("vibrate").addEventListener("click", function(){
+          if(window.navigator.vibrate){
+            window.navigator.vibrate([200,200,200,200,200]);
+          }else if(window.navigator.mozVibrate){
+            window.navigator.mozVibrate([200,200,200]);
+          }else if(window.navigator.webkitVibrate){
+            window.navigator.webkitVibrate([200]);
+          }else{
+            alert("sorry (T-T)");
+          }
+        }, true);
+      }, true);
+    </script>
+  </head>
 
-	<div class="container">
-		<div class="input-area">
-			<input type="text" id="price" placeholder="金額">
-			<input type="text" id="num" placeholder="人数">
-			<select id="unit">
-				<option value="0">選択してください</option>
-				<option value="1">1円単位</option>
-				<option value="10">10円単位</option>
-				<option value="100">100円単位</option>
-				<option value="1000">1000円単位</option>
-			</select>
-			<button id="btn">計算</button>
-			</div>
-			<div id="result-area">
-				<p id="result">ここに結果を表示します</p>
-				<p ></p>
-			</div>
-		</div>
-	</div>
+  <body>
+    <form>
+      <input type="button" id="vibrate" value="ぶるぶる">
+    </form>
+  </body>
+</html>
 
-	
 	<!-- JavaScript -->
-	<script src="//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 	<script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script src="./main.js"></script>
 </body>
