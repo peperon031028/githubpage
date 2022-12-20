@@ -12,33 +12,61 @@
 <body>
 	<!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="initial-scale=1.0" />
-    <title>スマホバイブ</title>
-    <script>
-      window.addEventListener("load", function(){
-        document.getElementById("vibrate").addEventListener("click", function(){
-          if(window.navigator.vibrate){
-            window.navigator.vibrate([200,200,200,200,200]);
-          }else if(window.navigator.mozVibrate){
-            window.navigator.mozVibrate([200,200,200]);
-          }else if(window.navigator.webkitVibrate){
-            window.navigator.webkitVibrate([200]);
-          }else{
-            alert("sorry (T-T)");
-          }
-        }, true);
-      }, true);
-    </script>
-  </head>
+  <input type = "button" id="button_01_vibrate1" style="width:100%; height:50px; margin-bottom:4px;" value="１秒間振動させる"><br>
+<input type = "button" id="button_01_vibrate5" style="width:100%; height:50px; margin-bottom:4px;" value="５秒間振動させる"><br>
+<input type = "button" id="button_01_pattern" style="width:100%; height:50px; margin-bottom:4px;" value="パターン振動させる"><br>
+<input type = "button" id="button_01_cancel" style="width:100%; height:50px; margin-bottom:4px;" value="停止する"><br>
 
-  <body>
-    <form>
-      <input type="button" id="vibrate" value="ぶるぶる">
-    </form>
-  </body>
-</html>
+<script type="text/javascript">
+// 匿名関数内で実行
+(function (){
+
+	// ------------------------------------------------------------
+	// 各エレメントを取得する
+	// ------------------------------------------------------------
+	var input_button_vibrate1 = document.getElementById("button_01_vibrate1");
+	var input_button_vibrate5 = document.getElementById("button_01_vibrate5");
+	var input_button_pattern = document.getElementById("button_01_pattern");
+	var input_button_cancel = document.getElementById("button_01_cancel");
+
+	// ------------------------------------------------------------
+	// クリックした時に実行されるイベント
+	// ------------------------------------------------------------
+	input_button_vibrate1.onclick = function (e){
+		// デバイスを 1000 ミリ秒間振動させ続ける
+		navigator.vibrate( 1000 );
+	};
+
+	// ------------------------------------------------------------
+	// クリックした時に実行されるイベント
+	// ------------------------------------------------------------
+	input_button_vibrate5.onclick = function (e){
+		// デバイスを 5000 ミリ秒間振動させ続ける
+		navigator.vibrate( 5000 );
+	};
+
+	// ------------------------------------------------------------
+	// クリックした時に実行されるイベント
+	// ------------------------------------------------------------
+	input_button_pattern.onclick = function (e){
+		// 振動パターンを用意する
+		var pattern = [ 100 , 50 , 100 , 50 , 100 , 50 , 200 , 100 , 200 , 100 , 200 , 100 , 300 , 200 , 300 , 200 , 300 ];
+
+		// 振動パターンを使ってデバイスを振動させる
+		navigator.vibrate( pattern );
+	};
+
+	// ------------------------------------------------------------
+	// クリックした時に実行されるイベント
+	// ------------------------------------------------------------
+	input_button_cancel.onclick = function (e){
+		// デバイスの振動を停止する
+		navigator.vibrate( 0 );
+	};
+
+})();
+//-->
+</script>
 
 	<!-- JavaScript -->
 	<script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
