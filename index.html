@@ -4,71 +4,26 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>Kitchen</title>
+	<title>Research</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="./css/custom.css">
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
-	<!DOCTYPE html>
-<html>
-  <input type = "button" id="button_01_vibrate1" style="width:100%; height:50px; margin-bottom:4px;" value="１秒間振動させる"><br>
-<input type = "button" id="button_01_vibrate5" style="width:100%; height:50px; margin-bottom:4px;" value="５秒間振動させる"><br>
-<input type = "button" id="button_01_pattern" style="width:100%; height:50px; margin-bottom:4px;" value="パターン振動させる"><br>
-<input type = "button" id="button_01_cancel" style="width:100%; height:50px; margin-bottom:4px;" value="停止する"><br>
-
-<script type="text/javascript">
-// 匿名関数内で実行
-(function (){
-
-	// ------------------------------------------------------------
-	// 各エレメントを取得する
-	// ------------------------------------------------------------
-	var input_button_vibrate1 = document.getElementById("button_01_vibrate1");
-	var input_button_vibrate5 = document.getElementById("button_01_vibrate5");
-	var input_button_pattern = document.getElementById("button_01_pattern");
-	var input_button_cancel = document.getElementById("button_01_cancel");
-
-	// ------------------------------------------------------------
-	// クリックした時に実行されるイベント
-	// ------------------------------------------------------------
-	input_button_vibrate1.onclick = function (e){
-		// デバイスを 1000 ミリ秒間振動させ続ける
-		navigator.vibrate( 1000 );
-	};
-
-	// ------------------------------------------------------------
-	// クリックした時に実行されるイベント
-	// ------------------------------------------------------------
-	input_button_vibrate5.onclick = function (e){
-		// デバイスを 5000 ミリ秒間振動させ続ける
-		navigator.vibrate( 5000 );
-	};
-
-	// ------------------------------------------------------------
-	// クリックした時に実行されるイベント
-	// ------------------------------------------------------------
-	input_button_pattern.onclick = function (e){
-		// 振動パターンを用意する
-		var pattern = [ 100 , 50 , 100 , 50 , 100 , 50 , 200 , 100 , 200 , 100 , 200 , 100 , 300 , 200 , 300 , 200 , 300 ];
-
-		// 振動パターンを使ってデバイスを振動させる
-		navigator.vibrate( pattern );
-	};
-
-	// ------------------------------------------------------------
-	// クリックした時に実行されるイベント
-	// ------------------------------------------------------------
-	input_button_cancel.onclick = function (e){
-		// デバイスの振動を停止する
-		navigator.vibrate( 0 );
-	};
-
-})();
-//-->
-</script>
-
+	<script>
+		SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
+		const recognition = new SpeechRecognition();
+	  
+		recognition.interimResults = true; // これこれ
+	  
+		recognition.onresult = (event) => {
+		  console.log(event.results[0][0].transcript);
+		  console.log(event.results[0].isFinal); // 発言が終了したかどうか。
+		}
+	  
+		recognition.start();
+	  </script>
 	<!-- JavaScript -->
+	<script src="//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 	<script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
 	<script src="./main.js"></script>
 </body>
