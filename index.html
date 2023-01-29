@@ -4,27 +4,16 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>Research</title>
+	<title>p5js</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="./css/custom.css">
 </head>
 <body>
-	<script>
-		SpeechRecognition = webkitSpeechRecognition || SpeechRecognition;
-		const recognition = new SpeechRecognition();
-	  
-		recognition.interimResults = true; // これこれ
-	  
-		recognition.onresult = (event) => {
-		  console.log(event.results[0][0].transcript);
-		  console.log(event.results[0].isFinal); // 発言が終了したかどうか。
-		}
-	  
-		recognition.start();
-	  </script>
+		<span id="ball"></span>
 	<!-- JavaScript -->
-	<script src="//cdn.jsdelivr.net/npm/axios@0.21.1/dist/axios.min.js"></script>
 	<script src="//code.jquery.com/jquery-3.6.1.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/p5.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/p5.js/1.5.0/addons/p5.sound.js"></script>
 	<script src="./main.js"></script>
 </body>
 </html>
