@@ -4,17 +4,85 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>基本情報技術者アルゴリズム対策</title>
+	<title>PiyoStarter</title>
 	<!-- CSS -->
+	<link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="./libs/bootstrap/carousel.css">
+	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="./css/custom.css">
 </head>
 <body>
-	<div id="my_container">
-		<div>
-			<div>= 基本情報技術者アルゴリズム対策 =</div>
-		</div>
+	
+	<!-- Header(Start) -->
+	<header>
+		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">
+					<img src="./images/logo.png">PiyoStarter
+				</a>
+			</div>
+		</nav>
+	</header>
+	<!-- Header(End) -->
+
+	<!-- Main(Start) -->
+	<div class="container mt-5">
+			<h2>Bootstrapを始めよう！！</h3>
+				<p>世界で一番人気があるフロントエンドライブラリBootstrapで、モバイルファーストなレスポンスを素早くデザイン・カスタマイズできます。レスポンシブグリットシステム、豊富なコンポーネント、強力なJavaScriptプラグインを備えています。</p>
+				<button type="button" class="btn btn-primary mb-4">公式サイト</button>
 	</div>
+
+	<div class="border-top mt-3 mx-5" style="padding:10px;"></div> <!--上ボーダー -->
+	<main>
+		
+		<div class="container mt-3">
+			<div class="row">
+				<div class="col-6">
+					<h3>Layout</h3>
+					<p>Bootstrapには強力なレイアウトシステムが存在します。先ずはコンテナとグリッドシステムについて理解しましょう。</p>
+						<ul class="list-unstyled">
+								<ul>
+									<li><a href="https://getbootstrap.jp/docs/5.0/layout/containers/">ネストされたリスト項目</a></li>
+									<li>Grid(Comming soon!!)</li>
+								</ul>
+						</ul>
+				</div>
+				<div class="col-6">
+					<p>Bootstrapにはさまざまなコンポーネントが備わっています。必要に応じて使いこなしましょう</p>
+						<ul class="list-unstyled">
+								<ul>
+									<li><a href="https://getbootstrap.jp/docs/5.0/components/buttons/">Button guide</a></li>
+									<li><a href="https://getbootstrap.jp/docs/5.0/components/alerts/">Alerts guide</a></li>
+									<li><a href="https://getbootstrap.jp/docs/5.0/components/card/">Card guide</a></li>
+									<li><a href="https://getbootstrap.jp/docs/4.2/components/collapse/">Collapse guide</a></li>
+									<li><a href="https://getbootstrap.jp/docs/5.0/components/accordion/">Accordion guide</a></li>
+									<li>etc...(Comming sonn!!)</li>
+								</ul>
+						</ul>
+				</div>
+			</div>
+		</div>
+
+	</main>
+	<!-- Main(End) -->
+
+	<!-- Footer(Start) -->
+	<footer>
+		<div class="container text-muted py-5">
+			<p class="float-end mb-1"><a href="#">Back to top</a></p>
+			<p class="mb-1">&copy; Bootstrap</p>
+			<p class="mb-0">
+				<a href="https://getbootstrap.jp" target="_blank">Bootstap公式サイト</a>や
+				<a href="https://getbootstrap.jp/docs/5.0/getting-started/introduction/" target="_blank">スタートガイド</a>、
+				<a href="https://icons.getbootstrap.com/" target="_blank">アイコン</a>を活用しましょう。
+			</p>
+		</div>
+	</footer>
+	<!-- Footer(End) -->
+
 	<!-- JavaScript -->
+	<script src="./libs/jquery/jquery-3.6.1.min.js"></script>
+	<script src="./libs/bootstrap/bootstrap.min.js"></script>
 	<script src="./main.js"></script>
 </body>
 </html>
