@@ -4,7 +4,7 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>PiyoStarter</title>
+	<title>PiyoTemplate</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="./libs/bootstrap/carousel.css">
@@ -18,7 +18,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">
-					<img src="./images/logo.png">PiyoStarter
+					<img src="./images/logo.png">PiyoTemplate
 				</a>
 			</div>
 		</nav>
@@ -26,41 +26,37 @@
 	<!-- Header(End) -->
 
 	<!-- Main(Start) -->
-	<div class="container mt-5">
-			<h2>Bootstrapを始めよう！！</h3>
-				<p>世界で一番人気があるフロントエンドライブラリBootstrapで、モバイルファーストなレスポンスを素早くデザイン・カスタマイズできます。レスポンシブグリットシステム、豊富なコンポーネント、強力なJavaScriptプラグインを備えています。</p>
-				<button type="button" class="btn btn-primary mb-4">公式サイト</button>
-	</div>
-
-	<div class="border-top mt-3 mx-5" style="padding:10px;"></div> <!--上ボーダー -->
 	<main>
-		
-		<div class="container mt-3">
-			<div class="row">
-				<div class="col-6">
-					<h3>Layout</h3>
-					<p>Bootstrapには強力なレイアウトシステムが存在します。先ずはコンテナとグリッドシステムについて理解しましょう。</p>
-						<ul class="list-unstyled">
-								<ul>
-									<li><a href="https://getbootstrap.jp/docs/5.0/layout/containers/">ネストされたリスト項目</a></li>
-									<li>Grid(Comming soon!!)</li>
-								</ul>
-						</ul>
-				</div>
-				<div class="col-6">
-					<p>Bootstrapにはさまざまなコンポーネントが備わっています。必要に応じて使いこなしましょう</p>
-						<ul class="list-unstyled">
-								<ul>
-									<li><a href="https://getbootstrap.jp/docs/5.0/components/buttons/">Button guide</a></li>
-									<li><a href="https://getbootstrap.jp/docs/5.0/components/alerts/">Alerts guide</a></li>
-									<li><a href="https://getbootstrap.jp/docs/5.0/components/card/">Card guide</a></li>
-									<li><a href="https://getbootstrap.jp/docs/4.2/components/collapse/">Collapse guide</a></li>
-									<li><a href="https://getbootstrap.jp/docs/5.0/components/accordion/">Accordion guide</a></li>
-									<li>etc...(Comming sonn!!)</li>
-								</ul>
-						</ul>
-				</div>
+
+		<!-- リスト3-47 -->
+		<div class="container">
+			<h3 class="mb-4">レスポンシブ画像(img-fluid)</h3>
+			<img src="images/img_1024x512.png" class="img-fluid" alt="レスポンシブ画像">
+		</div>
+
+		<!-- リスト3-49 -->
+		<div class="container">
+			<img src="images/img_200x200.png" alt="サムネイル画像" class="img-thumbnail">
+		</div>
+
+		<!-- リスト3-51 -->
+		<div class="container">
+			<div class="clearfix">
+				<img src="images/img_200x200.png" class="float-start" alt="左揃え画像">
+				<img src="images/img_200x200.png" class="float-end" alt="右揃え画像">
 			</div>
+		</div>
+
+		<!-- リスト3-52 -->
+		<div class="container">
+			<div class="text-center">
+				<img src="images/img_200x200.png" alt="中央揃え画像">
+			</div>
+		</div>
+
+		<!-- リスト3-53 -->
+		<div class="container">
+			<img src="images/img_200x200.png" class="rouded mx-auto d-block" alt="中央揃え画像"
 		</div>
 
 	</main>
