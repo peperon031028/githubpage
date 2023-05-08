@@ -2,22 +2,28 @@ console.log("main.js!!");
 
 /**
  * 基本情報技術者アルゴリズム対策
- * 練習: 08
+ * 練習: 09
  * デバッガでのトレースで動きを確かめること
 */
-let d = 123114
 
-let summation  = (n)=>{
-    let y = 0
-    let z = 1
-    while(d > 0){
-        x = moth.floor(d % 10 / 10)
-        if(x = 0){
-            y = y + 5 * z
+let fizzbuzz = () =>{
+    let i = 1
+    let n = 100
+    while(i <= n){
+        if(i % 3 === 0){
+            console.log("Fizz")
+            if(i % 5 === 0){
+                console.log("Buzz")
+            }
         }
-        else{
-            y = y + x * z
+        else if(i % 5 === 0){
+            console.log("Buzz")
+        }else{
+            console.log(i)
         }
-        console.log(y)
-    }   
+        
+        i = i + 1
+    }
 }
+
+console.log("Result;", fizzbuzz(100))
