@@ -4,7 +4,7 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>PiyoForm</title>
+	<title>PiyoCarousel</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="./libs/bootstrap/carousel.css">
@@ -18,7 +18,7 @@
 		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">
-					<img src="./images/logo.png">PiyoForm
+					<img src="./images/logo.png">PiyoCarousel
 				</a>
 			</div>
 		</nav>
@@ -26,76 +26,155 @@
 	<!-- Header(End) -->
 
 	<!-- Main(Start) -->
-	<main style="padding-top: 20px; padding-left: 20px;">
-		<h1>FormControl</h1>
-		<label class="form-label" for="emaill">Email address</label>
-		<input style="margin-right: 20px;" type="emaill" class="form-control" id="meill" aria-describedby="emaiHelp" placeholder="piyo@piyo.com">
+	<main>
+		
 
-		<div class="mt-3">
-			<label class="form-label" for="textarea1">Example textarea</label>
-			<textarea class="form-control" id="textarea" rows="3"></textarea>
-		</div>
-		<div class="mt-3">
-			<!--　プルダウンメニュー　-->
-			<select class="form-select" aria-label="プルダウンメニュー">
-				<option selected>あなたの性別は？</option>
-				<option value="1">男性</option>
-				<option value="1">女性</option>
-				<option value="1">不明</option>
-			</select>
-		</div>
+		<div>
+			<div id="carouselControls" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
+				<!-- インジケーター部分 -->
+				<ol class="carousel-indicators">
+					<li data-bs-target="#carouselControls" data-bs-slide-to="0" class="active"></li>
+					<li data-bs-target="#carouselControls" data-bs-slide-to="1"></li>
+					<li data-bs-target="#carouselControls" data-bs-slide-to="2"></li>
+				</ol>
+				<div class="carousel-inner">
+					<!-- First slide -->
+					<div class="carousel-item active" data-bs-interval="1000">
+						<img class="d-block w-100" alt="First slide" src="images/logo_html.png">
+						<!-- キャプション　-->
+						<div class="carousel-caption d-none d-md-block" style="text-align: left; margin-right: 100px;">
+							<h2>Hell,HTML.</h2>
+							<p>HTMLは、主にWrod Wide Webにおいて、Webページを表現するために用いられます。</p>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+					<!-- Second slide -->
+					<div class="carousel-item" data-bs-interval="3000">
+						<img class="d-block w-100" alt="Second slide" src="images/logo_bootstrap.png">
 
-	<div class="mt-3">
-		<div class="form-check">
-			<input class="form-check-input" type="checkbox" value="" id="check1">
-			<label class="form-check-label" for="check1">
-				Degault checkbox
-			</label>
-		</div>
-		<div class="form-check">
-			<input class="form-check-input" type="checkbox" value="" id="check2" checked>
-			<label class="form-check-label" for="check2">
-				Checked checkbox
-			</label>
-		</div>
-	</div>
+						<div class="carousel-caption d-none d-md-block" style="text-align: left; margin-right: 100px;">
+							<h2>Hell,HTML.</h2>
+							<p>HTMLは、主にWrod Wide Webにおいて、Webページを表現するために用いられます。</p>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+					<div class="carousel-item" data-bs-interval="100">
+						<img class="d-block w-100" alt="Third slide" src="images/logo_css.png">
 
-	<div class="mt-3">
-		<div class="form-check">
-			<input class="form-check-input" type="radio" name="radios" id="radios1" value="option1">
-			<label class="form-check-label" for="radios1">
-				Degault radio
-			</label>
-		</div>
-		<div class="form-check">
-			<input class="form-check-input" type="radio" name="radios" id="radios1" value="option2" checked>
-			<label class="form-check-label" for="radio2">
-				Checked radio
-			</label>
-		</div>
-	</div>
+						<div class="carousel-caption d-none d-md-block" style="text-align: left; margin-right: 100px;">
+							<h2>Hell,HTML.</h2>
+							<p>HTMLは、主にWrod Wide Webにおいて、Webページを表現するために用いられます。</p>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</div>
+				</div>
+				<!-- コントローラー部分　-->
+					<!-- 前に戻るアイコン -->
+					<a class="carousel-control-prev" href="#carouselControls" role="button" data-bs-slide="prev">
+						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">前に戻る</span>
+					</a>
+					<!-- 次に送るアイコン -->
+					<a class="carousel-control-next" href="#carouselControls" role="button" data-bs-slide="next">
+						<span class="carousel-control-next-icon" aria-hidden="true"></span>
+						<span class="visually-hidden">次に送る</span>
+					</a>
+					
+			</div>
 
-	<div class="mt-3">
-		<div class="form-check form-switch">
-			<input class="form-check-input" type="checkbox" value="" id="check1">
-			<label class="form-check-label" for="check1">
-				Degault switch
-			</label>
-		</div>
-		<div class="form-check form-switch">
-			<input class="form-check-input" type="checkbox" value="" id="check2" checked>
-			<label class="form-check-label" for="check2">
-				Checked switch
-			</label>
-		</div>
-	</div>
+			<div class="row justify-content-evenly">
+				<!-- カラム０１　-->
+				<div class="col-sm-4">
+					<div class="card text-center">
+						<img class=" rounded-circle" src="images/logo_jquery.png">
+						<div class="car-jquery rounded-circle">
+						<div class="card-body">
+								<!-- カードの内容分:card-text -->
+								<h3>jQuery</h3>
+								<p class="card-text">jQuery(ジェイクエリー)は、ウェヴブラウザ用のJavaScriptコードをより容易に記述できる様にするために設計されたJavaScriptライブラリです。</p>
+							<a href="#" class="btn btn-secondary ">View details <i class="bi bi-caret-right"></i></a>
+						</div>
+					    </div>
+					</div>
+				</div>
+				<!-- カラム０２　-->
+				<div class="col-sm-4">
+					<div class="card text-center">
+						<img class="rounded-circle" src="images/logo_bootstrap.png" alt="html">
+						<div class="card-body">
+								<!-- カードの内容分:card-text -->
+								<h3>Bootstrap</h3>
+								<p class="card-text">BootstrapはウェブサイトやWebアプリを制作するフレームワークです。タイポグラフィ、フォーム、ボタン、ナビゲーションなど、HTMLおよびCSSベースのテンプレートが用意されます。</p>
+								<a href="#" class="btn btn-secondary ">View details <i class="bi bi-caret-right"></i></a>
+						</div>
+					</div>
+				</div>
+	
+				<!-- カラム０２　-->
+				<div class="col-sm-4">
+					<div class="card text-center">
+						<img class="rounded-circle" src="images/logo_vue.png" alt="html">
+						<div class="card-body">
+								<!-- カードの内容分:card-text -->
+								<h3>Vue.js</h3>
+								<p class="card-text">Vue.jsは、Webアプリケーションにおけるユーザーインターフェイスを構築するためのJavaScriptフレームワークです。</p>
+								<a href="#" class="btn btn-secondary ">View details <i class="bi bi-caret-right"></i></a>
+						</div>
+					</div>
+				</div>
+			　</div>
+			<div class="border-top" style="margin-top: 50px;"></div> <!--上ボーダー -->
 
-	<div class="mt-3 row">
-		<div class="col-sm-10">
-			<button type="submit" class="btn btn-primary">Submit</button>
-			<button type="submit" class="btn btn-secondary">Reset</button>
+			<div　class="container">
+				<div class="row">
+					<div class="col-7"  style="margin-top: 60px; padding-left: 50px;">
+						<h2>1st step.Hello,HTML!!</h2>
+						<p>HyperText Markup Language(ハイパーテキスト マークアップランゲージ)は、ハイパーテイストを記述するためのマークアップ言語の１つで、
+							主にWorld Wide Web(WWW)において、Webページを表現するために用いられます。</p>
+					</div>
+					<div class="col-5 "  style="margin-top: 50px;">
+						<img class="img-fluid" src="images/logo_bootstrap.png" alt="html">
+					</div>
+				</div>
+
+				<div class="border-top" style="margin-top: 50px;"></div> <!--上ボーダー -->
+
+			<div　class="container">
+				<div class="row">
+					<div class="col-5 "  style="margin-top: 50px;">
+						<img class="img-fluid" src="images/logo_css.png" alt="html">
+					</div>
+					<div class="col-7"  style="margin-top: 60px; padding-left: 50px;">
+						<h2>2nd step.Hello,CSS!!</h2>
+						<p>CSS(Cascading Style Sheets)は、HTMLやXMLの要素をどのように修節(表示)するかを支持する仕様の一つで絵、文章の構造と態勢を分離させると言う理念を
+							実現するために提唱されたスタイルシートの具体的な仕様の一つです。
+						</p>
+					</div>
+				</div>
+
+
+			</div>
+
+			<div class="border-top" style="margin-top: 50px;"></div> <!--上ボーダー -->
+
+			<div　class="container">
+				<div class="row">
+					<div class="col-7"  style="margin-top: 60px; padding-left: 50px;">
+						<h2>3rd step.Hello,CSS!!</h2>
+						<p>JavaScriptは、プログラミング言語であり、HTMLやCSSと並ぶ、WWWの中核技術の一つです。利用される場面はフロント/バックエンド、アプリなど、ブラウザからサーバー、デスクトップからスマートフォンまで多岐に渡ります。</p>
+					</div>
+					<div class="col-5 "  style="margin-top: 50px;">
+						<img class="img-fluid" src="images/logo_javascript.png" alt="html">
+					</div>
+				</div>
+
+				<div class="border-top" style="margin-top: 50px;"></div> <!--上ボーダー -->
+
+			</div>
+
+			</div>
 		</div>
-	</div>
+		
 	</main>
 	<!-- Main(End) -->
 
