@@ -1,0 +1,20 @@
+
+天気アプリを作ろう!!
+
+提出期限:11月28日(月)
+
+進め方:
+	チームを2つに分けて技術提供(教え合い)しながら進める事!!
+
+チーム分け:
+
+	チームA: Masuda
+		Adachi, Ichikawa, Endo, Nishida, Masuda
+	チームB: Yoshida
+		Nakamoto, Mansai, Yoshida, Wakabayashi
+
+役割:
+	リーダーを1人決める事
+
+条件:
+	全員完成させる事
