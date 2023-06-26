@@ -4,7 +4,7 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>PiyoCarousel</title>
+	<title>Modal</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="./libs/bootstrap/carousel.css">
@@ -14,182 +14,23 @@
 <body>
 	
 	<!-- Header(Start) -->
-	<header>
-		<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-			<div class="container-fluid">
-				<a class="navbar-brand" href="#">
-					<img src="./images/logo.png">PiyoCarousel
-				</a>
-			</div>
-		</nav>
-	</header>
 	<!-- Header(End) -->
 
 	<!-- Main(Start) -->
 	<main>
-		
-
-		<div>
-			<div id="carouselControls" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="1000">
-				<!-- インジケーター部分 -->
-				<ol class="carousel-indicators">
-					<li data-bs-target="#carouselControls" data-bs-slide-to="0" class="active"></li>
-					<li data-bs-target="#carouselControls" data-bs-slide-to="1"></li>
-					<li data-bs-target="#carouselControls" data-bs-slide-to="2"></li>
-				</ol>
-				<div class="carousel-inner">
-					<!-- First slide -->
-					<div class="carousel-item active" data-bs-interval="1000">
-						<img class="d-block w-100" alt="First slide" src="images/logo_html.png">
-						<!-- キャプション　-->
-						<div class="carousel-caption d-none d-md-block" style="text-align: left; margin-right: 100px;">
-							<h2>Hell,HTML.</h2>
-							<p>HTMLは、主にWrod Wide Webにおいて、Webページを表現するために用いられます。</p>
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</div>
-					</div>
-					<!-- Second slide -->
-					<div class="carousel-item" data-bs-interval="3000">
-						<img class="d-block w-100" alt="Second slide" src="images/logo_bootstrap.png">
-
-						<div class="carousel-caption d-none d-md-block" style="text-align: left; margin-right: 100px;">
-							<h2>Hell,HTML.</h2>
-							<p>HTMLは、主にWrod Wide Webにおいて、Webページを表現するために用いられます。</p>
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</div>
-					</div>
-					<div class="carousel-item" data-bs-interval="100">
-						<img class="d-block w-100" alt="Third slide" src="images/logo_css.png">
-
-						<div class="carousel-caption d-none d-md-block" style="text-align: left; margin-right: 100px;">
-							<h2>Hell,HTML.</h2>
-							<p>HTMLは、主にWrod Wide Webにおいて、Webページを表現するために用いられます。</p>
-							<button type="submit" class="btn btn-primary">Submit</button>
-						</div>
-					</div>
-				</div>
-				<!-- コントローラー部分　-->
-					<!-- 前に戻るアイコン -->
-					<a class="carousel-control-prev" href="#carouselControls" role="button" data-bs-slide="prev">
-						<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">前に戻る</span>
-					</a>
-					<!-- 次に送るアイコン -->
-					<a class="carousel-control-next" href="#carouselControls" role="button" data-bs-slide="next">
-						<span class="carousel-control-next-icon" aria-hidden="true"></span>
-						<span class="visually-hidden">次に送る</span>
-					</a>
-					
-			</div>
-
-			<div class="row justify-content-evenly">
-				<!-- カラム０１　-->
-				<div class="col-sm-4">
-					<div class="card text-center">
-						<img class=" rounded-circle" src="images/logo_jquery.png">
-						<div class="car-jquery rounded-circle">
-						<div class="card-body">
-								<!-- カードの内容分:card-text -->
-								<h3>jQuery</h3>
-								<p class="card-text">jQuery(ジェイクエリー)は、ウェヴブラウザ用のJavaScriptコードをより容易に記述できる様にするために設計されたJavaScriptライブラリです。</p>
-							<a href="#" class="btn btn-secondary ">View details <i class="bi bi-caret-right"></i></a>
-						</div>
-					    </div>
-					</div>
-				</div>
-				<!-- カラム０２　-->
-				<div class="col-sm-4">
-					<div class="card text-center">
-						<img class="rounded-circle" src="images/logo_bootstrap.png" alt="html">
-						<div class="card-body">
-								<!-- カードの内容分:card-text -->
-								<h3>Bootstrap</h3>
-								<p class="card-text">BootstrapはウェブサイトやWebアプリを制作するフレームワークです。タイポグラフィ、フォーム、ボタン、ナビゲーションなど、HTMLおよびCSSベースのテンプレートが用意されます。</p>
-								<a href="#" class="btn btn-secondary ">View details <i class="bi bi-caret-right"></i></a>
-						</div>
-					</div>
-				</div>
-	
-				<!-- カラム０２　-->
-				<div class="col-sm-4">
-					<div class="card text-center">
-						<img class="rounded-circle" src="images/logo_vue.png" alt="html">
-						<div class="card-body">
-								<!-- カードの内容分:card-text -->
-								<h3>Vue.js</h3>
-								<p class="card-text">Vue.jsは、Webアプリケーションにおけるユーザーインターフェイスを構築するためのJavaScriptフレームワークです。</p>
-								<a href="#" class="btn btn-secondary ">View details <i class="bi bi-caret-right"></i></a>
-						</div>
-					</div>
-				</div>
-			　</div>
-			<div class="border-top" style="margin-top: 50px;"></div> <!--上ボーダー -->
-
-			<div　class="container">
-				<div class="row">
-					<div class="col-7"  style="margin-top: 60px; padding-left: 50px;">
-						<h2>1st step.Hello,HTML!!</h2>
-						<p>HyperText Markup Language(ハイパーテキスト マークアップランゲージ)は、ハイパーテイストを記述するためのマークアップ言語の１つで、
-							主にWorld Wide Web(WWW)において、Webページを表現するために用いられます。</p>
-					</div>
-					<div class="col-5 "  style="margin-top: 50px;">
-						<img class="img-fluid" src="images/logo_bootstrap.png" alt="html">
-					</div>
-				</div>
-
-				<div class="border-top" style="margin-top: 50px;"></div> <!--上ボーダー -->
-
-			<div　class="container">
-				<div class="row">
-					<div class="col-5 "  style="margin-top: 50px;">
-						<img class="img-fluid" src="images/logo_css.png" alt="html">
-					</div>
-					<div class="col-7"  style="margin-top: 60px; padding-left: 50px;">
-						<h2>2nd step.Hello,CSS!!</h2>
-						<p>CSS(Cascading Style Sheets)は、HTMLやXMLの要素をどのように修節(表示)するかを支持する仕様の一つで絵、文章の構造と態勢を分離させると言う理念を
-							実現するために提唱されたスタイルシートの具体的な仕様の一つです。
-						</p>
-					</div>
-				</div>
-
-
-			</div>
-
-			<div class="border-top" style="margin-top: 50px;"></div> <!--上ボーダー -->
-
-			<div　class="container">
-				<div class="row">
-					<div class="col-7"  style="margin-top: 60px; padding-left: 50px;">
-						<h2>3rd step.Hello,CSS!!</h2>
-						<p>JavaScriptは、プログラミング言語であり、HTMLやCSSと並ぶ、WWWの中核技術の一つです。利用される場面はフロント/バックエンド、アプリなど、ブラウザからサーバー、デスクトップからスマートフォンまで多岐に渡ります。</p>
-					</div>
-					<div class="col-5 "  style="margin-top: 50px;">
-						<img class="img-fluid" src="images/logo_javascript.png" alt="html">
-					</div>
-				</div>
-
-				<div class="border-top" style="margin-top: 50px;"></div> <!--上ボーダー -->
-
-			</div>
-
+		<div class="container">
+			<div class="container-fluid">
+				<a class="navbar-brand">
+					<p class="text-center " style=" margin-top: 200px;  font-size: 15px; gap: 20px;" >hello!!</p>
+					<a href="./portfolios/index.html"><img class="text-center" id="demo"  style="margin-top: -40px;" src="./images/logo.png" class="navbar-brand"></a>
+					<p class="text-center" style="  margin-bottom: 300px; padding-top: 20px; font-size: 15px;"><code>俺を押せばポートフォリオに飛ばすぞ！</code></p>
+				</a>
 			</div>
 		</div>
-		
 	</main>
 	<!-- Main(End) -->
 
 	<!-- Footer(Start) -->
-	<footer>
-		<div class="container text-muted py-5">
-			<p class="float-end mb-1"><a href="#">Back to top</a></p>
-			<p class="mb-1">&copy; Bootstrap</p>
-			<p class="mb-0">
-				<a href="https://getbootstrap.jp" target="_blank">Bootstap公式サイト</a>や
-				<a href="https://getbootstrap.jp/docs/5.0/getting-started/introduction/" target="_blank">スタートガイド</a>、
-				<a href="https://icons.getbootstrap.com/" target="_blank">アイコン</a>を活用しましょう。
-			</p>
-		</div>
-	</footer>
 	<!-- Footer(End) -->
 
 	<!-- JavaScript -->
