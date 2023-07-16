@@ -26,3 +26,6 @@ html, body{
 /*	box-sizing: border-box;*/
 }
 
+.font-weight-bold {
+	font-weight: 700 !important;
+  }

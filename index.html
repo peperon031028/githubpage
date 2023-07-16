@@ -11,66 +11,47 @@
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
 	<link rel="stylesheet" href="./css/custom.css">
 </head>
-<script type="text/javascript">
-	function ShowHideDiv() {
-	var sonota = document.getElementById("sonota");
-	var dvPassport = document.getElementById("dvPassport");
-	dvPassport.style.display = sonota.checked ? "block" : "none";
-	}  
-
-
-   </script>
 <body>
 
-	<h1>消費税の計算電卓</h1>
+	<h1>Hello Wareki!!</h1>
+
+	<h6 class="text-center" style="margin-top: 10px;">肥満レベルと適正体重を判定！</h6>
+	<h2 class="text-center" style="margin-top: 10px;">BMIの計算</h2>
 
 	<div class="container">
-		<div class="row">
-			<div class="card col-md-4 offset-md-4 ">
-				<p class="text-center" style="margin-top: 10px;">\ 税抜き価格を入力 /</p>
-			<!-- 金額と人数入力 -->
-			<p class="text-center"><input id="num" class="center-block" type="text" placeholder="金額(1000)" style="text-align: right; width: 150px;">円</p>
-
-
-			<div id="aGroup" class="radio-inline" style="text-align: center;">
-				<p class="text-center">消費税率<input type="radio"  name="interests" id="interest_soccer" checked="checked" style="margin-left: 5px;" value="10" onclick="ShowHideDiv()">
-				  <label for="interest_soccer">10%</label>
-
-				  <input type="radio" name="interests" id="interest_basketball" value="8" onclick="ShowHideDiv()">
-					<label for="interest_basketball">8%</label>
-
-					<label for="sonota">
-					<input for="sonota" type="radio" name="interests" id="sonota" value="0" onclick="ShowHideDiv()">
-					  その他</label></p>
-			  </div>
-
-
-   <div id="dvPassport" style="display: none">
-	<p class="text-center">
-	<input type="text" id="first" style="text-align: right; width: 70px;" placeholder="例:50">%</p>
-   </div>
-
-   
-
-
-   <button id="btn" type="button" class="btn btn-success" onclick="">→ 消費税を計算</button>
-
-   <div class="border-top" style="margin-top: 50px;"></div> <!--上ボーダー -->
-
-   <div class="result-area">
-
-	<!-- 結果表示 -->
-	<p id="list1">消費税</p>
+		<div class="container">
+			<div class="row">
+				<div class="card col-md-6 offset-md-3 ">
+					<p class="text-center font-weight-bold" style="margin-top: 10px;">\ 税抜き価格を入力 /</p>
+				<!-- 金額と人数入力 -->
+				<p class="text-center "><i class="bi bi-moisture" style="margin-right: 5px;"></i><p　class="text-center">身長<input id="num" class="center-block" type="text" placeholder="170" style="text-align: right; width: 50px; margin-left: 5px;"> cm</p></p>
+				
+				<p class="text-center" style="margin-top: -20px;"><i class="bi bi-inbox" style="margin-right: 5px;"></i><p　class="text-center">体重<input id="num2" class="center-block" type="text" placeholder="70" style="text-align: right; width: 50px; margin-left: 5px;"> kg</p></p>
+				
 	
-	<p id="list2">合計</p>
-
-
+		
+				<button id="btn" type="button" class="btn btn-success" onclick="">→ BMIを計算する</button>
+	</div>
+</div>
 </div>
 
-			</div>
-		  </div>
-	</div>
+	
+	<div class="border-top" style="margin-top: 50px;"></div> <!--上ボーダー -->
 
+	<div class="container" style="padding-top: 20px;">
+		<div class="container">
+			<div class="row">
+				<div class="card col-md-8 offset-md-2 ">
+			
+	<h4 id="list1">消費税</h4>
+	
+	<p id="list2">合計</p>
+	<p id="list3">合計</p>
+		
+			</div>
+		</div>
+	</div>
+	</div>
 	<!-- JavaScript -->
 	<script src="./libs/jquery/jquery-3.6.1.min.js"></script>
 	<script src="./libs/bootstrap/bootstrap.min.js"></script>

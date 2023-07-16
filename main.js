@@ -1,68 +1,46 @@
 console.log("main.js!!");
 
 
-var Price = 0; // 初期値は0 この設定がないとチェックなしの０が取得できない
-
-console.log(Price)
-//////////////////////////////////////////////////////
-// ▼▼▼ 各グループでのチェックボックス値を取得
-// Aグループ
 
 
+$("#btn").click(() => {	
 
+	$(document).ready(function() {
+	
+	
+		  //左側inputの入力値を取得（numA）
+		  var numA = parseInt($("#num").val());
+		  numA = numA / 100
+		  var numB = parseInt($("#num2").val());
+		  var numC = ((numB / (numA * numA)));
+		  Number(numC)
 
-
-
-    $("#btn").click(() => {	
-
-$(document).ready(function() {
-
-	// $('#aGroup').change(function () {
-	// 	if ($('#aGroup .radioBtn').is(':checked')) {
-	// 		var PriceVal = $('#aGroup .radio:checked').val(); // チェックした値を取得
-	// 		if (PriceVal == "10") { // 値によって金額を設定
-	// 			Price = 0.1; // グルーバル変数でないと外から参照できない
-	// 			console.log(Price)
-	// 		} else if (PriceVal == "8") {
-	// 			Price = 0.08;
-			// }else{
-			// 	$("#first").focusout(function() {
-			// 		var inputNumber = $("#first").val();
-			// 	  })
-			// }
-	// 	} 
-	// 	console.log(Price)
-	// });
-	const str1 = $('input:radio[name="interests"]:checked').val();
-		console.log(str1)
-		if (str1 == 10){
-			Price = 0.1;
-			console.log(Price)
-		}else if(str1 == 8){
-			Price = 0.08;
-			console.log(Price)
-		}else if(str1 == 0){
-
-			$(function(){
-				$("#first").keyup(function(){
-				 Price = parseInt($("#first").val());
-				 Price = Price / 100 ;
-				 console.log(Price)
-				});
-			   });
-		}
-
-
-	  //左側inputの入力値を取得（numA）
-	  var numA = parseInt($("#num").val());
-	  numB = parseInt(numA * Price);
-	  numC = numA + numB
-	  Number(numC)
-
-	  $("#list1").text(numB);
-	  $("#list2").text(numC);
-	  console.log(numA);  
-
-})
-
-});
+		  if (numC < 18.5) {
+			message = "低体重（やせ型）";
+			message2 = "もう少し体重を増やしましょう。";
+		  } else if (numC >= 18.5 && numC < 25) {
+			message = "普通体重";
+			message2 = "標準的な体重の範囲です。";
+		  } else if (numC >= 25 && numC < 30) {
+			message = "肥満(level1)";
+			message2 = "肥満体重です。BMIが25を超えると、糖尿病や高血圧などの生活習慣病のリスクが2倍以上になるとされています。※ ただし必ずしも医学的に減量すべきとは限りません。";
+		  } else if (numC >= 30 && numC < 35) {
+			message = "肥満(level2)";
+			message2 = "肥満体重です。BMIは25を超えると糖尿病や高血圧などの生活習慣病のリスクが2倍以上になり、30を超えると積極的な減量治療が必要とされています。";
+		  } else if (numC >= 35 && numC < 40) {
+			message = "肥満(level3)";
+			message2 = "高度肥満です。今すぐ医師の診断を受けましょう。";
+		  } else if (numC >= 40) {
+			message = "肥満(level4)";
+			message2 = "高度肥満です。今すぐ医師の診断を受けましょう。";
+		  }
+	
+		  $("#list1").text("BMI値は" + numC + "です。");
+		  $("#list2").text("診断結果：" + message);
+		  $("#list3").text(message2);
+		  console.log(numC);  
+		  
+	
+	})
+	
+	});
