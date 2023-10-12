@@ -4,61 +4,38 @@
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>PiyoTemplate</title>
 	<!-- CSS -->
 	<link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
 	<link rel="stylesheet" href="./libs/bootstrap/carousel.css">
 	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="./css/custom.css">
-	<script>
-        document.bgColor = "#202020";
-        document.fgColor = "#E0E0E0";
-    </script>
+
+	<!-- 4-1-3 -->
+	<link rel="stylesheet" type="text/css" href="./css/4-2-1.css">
+
+
 </head>
-<body style="background-color: #fffaf0;">
-
-	<h1>Hello Wareki!!</h1>
-
-	<h2 class="text-center" style="margin-top: 10px; margin-bottom: 20px;">ガソリン代の計算</h2>
-
-	<div class="container">
-		<div class="container">
-			<div class="row">
-				<div class="card col-md-4 offset-md-4 " style="background-color: #fff5ee;">
-				<!-- 金額と人数入力 -->
-				
-				<p class=" " style="margin-top: 20px;"><i class="bi bi-moisture" style="margin-right: 5px;"></i><p　class="text-center">ガソリン価格<input id="num" class="center-block" type="text" placeholder="170" style="text-align: right; width: 50px; margin-left: 5px;"> 円/L</p></p>
-				
-				<p class="" style="margin-top: -20px;"><i class="bi bi-inbox" style="margin-right: 5px;"></i><p　class="text-center">走行距離<input id="num2" class="center-block" type="text" placeholder="100" style="text-align: right; width: 50px; margin-left: 34px;"> km</p></p>
-				
-				<p class="" style="margin-top: -20px;"><i class="bi bi-inbox" style="margin-right: 5px;"></i><p　class="text-center">車の燃費<input id="num3" class="center-block" type="text" placeholder="70" style="text-align: right; width: 50px; margin-left: 34px;"> km/L</p></p>
-	
-				<button id="btn" type="button" class="btn btn-primary mx-auto" style="width: 170px; margin-bottom: 10px;">→ ガソリン代を計算</button>
+<body>
+    <div id="splash">
+		<!-- 次の行の画像は自分で適宜差し換える-->
+		<div id="splash_logo"><img src="images/logo_08.png" alt="" class="fadeUp"></div>
 	</div>
-</div>
-</div>
-
-
-	
-	<div class="border-top" style="margin-top: 50px; margin-bottom: 50px;"></div> <!--上ボーダー -->
-
-	<div class="container">
-		<div class="container">
-			<div class="row">
-				<div class="card col-md-6 offset-md-3 " style="background-color: #fff5ee;">
-
-					<p class="fw-bold">計算結果</p>
-
-					<h4  id="list1">ここにガソリン代が出る</h4>
-	
-	<p id="list2">計算が出てくる</p>
-		
+	<div class="splashbg"></div>
+	<div id="container">
+		<p>ここにコンテンツが入ります</p>
 	</div>
-</div>
-</div>
+
+
 	<!-- JavaScript -->
-	<script src="./libs/jquery/jquery-3.6.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+	
 	<script src="./libs/bootstrap/bootstrap.min.js"></script>
 	<script src="./main.js"></script>
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.min.js"></script>
+<script src="http://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetvYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	
+	<script src="./4-2-1.js"></script>
 </body>
 </html>
