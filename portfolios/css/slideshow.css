@@ -1,0 +1,82 @@
+.slider{
+    /*スライドショーの位置の基点とするため
+    position: relative;をつける*/
+    position: relative;
+    /*z-indexの値を小さくして背景に回す*/
+    z-index: 1;
+    /*スライダー全体の縦幅を画面の高さいっぱい(100vh)にする*/
+    height: 100vh;
+}
+
+/*　背景画像設定 */
+.slider-item01{ background: url(../images/logo_html.png);}
+.slider-item02{ background: url(../images/logo_javascript.png);}
+.slider-item03{ background: url(../images/logo_bootstrap.png);}
+
+.slider-item{
+    /*各スライダ全体の横幅を画面の高さいっぱい(100%)にする*/
+    width: 100%;
+    /*各スライダ全体の横幅を画面の高さいっぱい(100vh)にする*/
+    height: 100vh;
+    /*背景画像をリピートしない*/
+    background-repeat: no-repeat;
+    /*背景画像の位置を中央に*/
+    background-position: center;
+    /*背景画像が.slider-item全体を覆い表示*/
+    background-size: cover;
+}
+
+/* 矢印の設定 */
+
+/* 戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next{
+    position: absolute; /*絶対配置にする*/
+    z-index: 3;
+    top: 42%; /*上から42%の位置に表示*/
+    /*マウスカーソルを指マークに*/
+    cursor: pointer;
+    /*マウスカーソルを指マークに*/
+    outline: none;
+    border-top: 2px solid #fff; /*矢印の色*/
+    border-right: 2px solid #fff; /*矢印の色*/
+    height: 25px; /*矢印のサイズ*/
+    width: 25px; /*矢印のサイズ*/
+}
+
+.slick-prev{/*戻る矢印の位置と形状*/
+    left: 2.5%;
+    transform: rotate(-135deg);
+}
+.slick-next{/*次へ矢印の位置と形状*/
+    right: 2.5%;
+    transform: rotate(45deg);
+}
+
+/*ドットナビゲーションの設定*/
+.slick-dots{
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    margin: -50px 0 0 0; /*ドットの位置*/
+}
+
+.slick-dots li{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-dots button{
+    color: transparent;
+    outline: none;
+    width: 8px;/*ドットボタンのサイズ*/
+    height: 8px;/*ドットボタンのサイズ*/
+    display: block;
+    border-radius: 50%;
+    background: #333;
+}
+
+.slick-dots .slider-active button{
+    /*ドットボタンの現在地表示の色*/
+    background: #333;
+}
