@@ -1,0 +1,44 @@
+#header{
+    /*h1の中央寄せ配置の基点とするためのrelatibe*/
+    position: relative;
+    height: 100vh; /*高さを全画面にあわせる*/
+}
+
+#video-area{
+    position: fixed;
+    z-index: -1; /*最背面にせってい　*/
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+}
+
+#video{
+    /*天地中央配置*/
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /*縦横幅指定*/
+    /*16:9の幅　１６　÷ ９＝177.77*/
+    width: 50%;
+    /*16:9の幅　9 ÷ 16＝56.25%*/
+    height: 50%;
+    min-height: 50%;
+    min-width: 50%;
+}
+
+/*見出し設定*/
+h1{
+    /*要素の配置*/
+    position: absolute;
+    /*要素を天地中央寄せ*/
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    /*見た目の調整*/
+    color: #fff;
+    text-shadow: 0 0 15px #666;
+}
