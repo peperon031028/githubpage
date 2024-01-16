@@ -1,41 +1,102 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-	<meta charset="UTF-8"/>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="shortcut icon" href="./images/favicon.ico">
-	<title>Modal</title>
-	<!-- CSS -->
-	<link rel="stylesheet" href="./libs/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="./libs/bootstrap/carousel.css">
-	<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css">
-	<link rel="stylesheet" href="./css/custom.css">
-</head>
-<body>
-	
-	<!-- Header(Start) -->
-	<!-- Header(End) -->
+<h1>数字当てゲーム</h1>
+<p>1 から 100 までの数字を10回以内に当ててみましょう</p>
 
-	<!-- Main(Start) -->
-	<main>
-		<div class="container">
-			<div class="container-fluid">
-				<a class="navbar-brand">
-					<p class="text-center " style=" margin-top: 200px;  font-size: 15px; gap: 20px;" >hello!!</p>
-					<a href="./portfolios/index.html"><img class="text-center" id="demo"  style="margin-top: -40px;" src="./images/logo.png" class="navbar-brand"></a>
-					<p class="text-center" style="  margin-bottom: 300px; padding-top: 20px; font-size: 15px;"><code>俺を押せばポートフォリオに飛ばすぞ！</code></p>
-				</a>
-			</div>
-		</div>
-	</main>
-	<!-- Main(End) -->
+<div class="form">
+  <label for="guessField">予想を入力してください: </label>
+  <input type="text" id="guessField" class="guessField">
+  <input type="submit" value="予想を入力" class="guessSubmit">
+</div>
 
-	<!-- Footer(Start) -->
-	<!-- Footer(End) -->
+<!-- JavaScriptで返す値を追加するための要素 -->
+<div class="resultParas">
+  <p class="guesses"></p>
+  <p class="lastResult"></p>
+  <p class="lowOrHi"></p>
+  <p class="answer"></p>
+</div>
 
-	<!-- JavaScript -->
-	<script src="./libs/jquery/jquery-3.6.1.min.js"></script>
-	<script src="./libs/bootstrap/bootstrap.min.js"></script>
-	<script src="./main.js"></script>
-</body>
-</html>
+<!-- リセットボタン用のフィールド（ゲームが終了したら表示） -->
+<div class="resetField"></div>
+
+<!-- JavaScript -->
+<script>
+  let randomNumber = Math.floor(Math.random()*100) + 1; // 1から100までの中からランダムな数字を1つ生成
+  
+  // html の各要素を取得する
+  const guesses = document.querySelector('.guesses');
+  const lastResult = document.querySelector('.lastResult');
+  const lowOrHi = document.querySelector('.lowOrHi');
+  const answer = document.querySelector('.answer');
+  const guessSubmit = document.querySelector('.guessSubmit'); // 予想を入力ボタンの要素
+  const guessField = document.querySelector('.guessField'); // 入力フォーム(<input>)の要素
+  const resetField = document.querySelector('.resetField'); // リセットボタンの要素
+
+  let guessCount = 1; // 予想回数（初期値は1）
+  let resetButton; // リセットボタンを定義
+
+  function checkGuess() { // 入力された予想の正誤判定
+
+    const userGuess = Number(guessField.value); // ユーザーが入力した値(入力フォームのvalueから取得)
+    if(guessCount === 1) {
+      guesses.textContent = '前回の予想: '; // 予想が入力されたら左記テキストを挿入
+    }
+    guesses.textContent += userGuess + ' '; // ユーザーが入力した値を挿入
+    
+    if(userGuess === randomNumber) { // 正解した場合
+      lastResult.textContent = '正解です!おめでとう!!';
+      lastResult.style.backgroundColor = 'green';
+      lastResult.style.color = 'white';
+      lowOrHi.textContent = '';
+      setGameOver(); // ゲームオーバー時の処理を行う（後述）
+    
+    } else if(guessCount === 10) { // 予想回数が10回に達した場合
+      lastResult.textContent = '!!!ゲームオーバー!!!';
+      answer.textContent = `正解は ${randomNumber} でした`;
+      answer.style.color = 'blue';
+      setGameOver(); // ゲームオーバー時の処理を行う（後述）
+    
+    } else { // 入力した予想が間違っている、かつ予想回数が10回未満の場合
+      lastResult.textContent = '間違いです!';
+      lastResult.style.backgroundColor = 'red';
+      lastResult.style.color = 'white';
+      if(userGuess < randomNumber) {
+        lowOrHi.textContent = 'もっと大きい値です!';
+      } else if(userGuess > randomNumber) {
+        lowOrHi.textContent = 'もっと小さい値です!';
+      }
+    }
+
+    guessCount++; // 予想回数に1を加算する
+    guessField.value = ''; // 入力フォームを空にする
+    guessField.focus(); // 入力フォームにフォーカスを設定する
+  }
+  guessSubmit.addEventListener('click', checkGuess); // 予想を入力ボタンをクリックするとcheckGuess()関数が発火する
+
+  function setGameOver() { // ゲームオーバー時の処理を行う関数
+	  guessField.disabled = true; // 入力フォームを利用不可にする
+	  guessSubmit.disabled = true; // 予想を入力ボタンを利用不可にする
+	  resetButton = document.createElement('button'); // ボタン要素を生成してresetButtonに代入
+	  resetButton.textContent = '新しいゲームを始める'; // resetButtonのテキスト
+	  resetField.appendChild(resetButton); // リセットボタン用のフィールドにresetButtonを表示
+	  resetButton.addEventListener('click', resetGame); // resetButtonをクリックするとresetGame()関数が発火する
+  }
+
+  function resetGame() { // 画面とロジックをリセットするための関数
+	  guessCount = 1; // 予想回数を1に戻す
+
+    const resetParas = document.querySelectorAll('.resultParas p');
+    for (const resetPara of resetParas) { // .resultParas の<p>要素のテキストを全て空にする
+      resetPara.textContent = '';
+    }
+	  resetButton.parentNode.removeChild(resetButton); // リセットボタンを削除する
+
+	  guessField.disabled = false; // 入力フォームを利用できるようにする
+	  guessSubmit.disabled = false; // 予想を入力ボタンを利用できるようにする
+	  guessField.value = ''; // 入力フォームを空にする
+	  guessField.focus(); // 入力フォームにフォーカスを設定する
+
+	  lastResult.style.backgroundColor = 'white';
+
+	  randomNumber = Math.floor(Math.random()*100) + 1; // 1から100までの中からランダムな数字を1つ生成して更新
+  }
+</script>
