@@ -4,28 +4,18 @@ html, body{
 	width: 100%; height: 100%;
 }
 
-.navbar-brand a img{
+.navbar-brand img{
 	width: 28px; height: auto;
 	margin: 0px 5px; padding: 0px;
 	border-radius: 14px;
 }
+
 
 #demo {
 	width:30px;
   height:30px;
   border-radius:50%;
 
-  display: block;
-
   margin-left: auto !important;
   margin-right: auto !important;
 }
-
-code {
-	display: inline-block;
-	padding: 0.1em 0.25em; /* 文字周りの余白 */
-	color: #444; /* 文字色 */
-	background-color: #e7edf3; /* 背景色 */
-	border-radius: 3px; /* 角丸 */
-	border: solid 1px #d6dde4; /* 枠線 */
-  }
